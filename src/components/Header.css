@@ -1,0 +1,16 @@
+.App-header-wrapper {
+    background-color: rgb(92, 48, 34);
+    color: #fff;
+    padding: 1em 0;
+    height: 10vh;
+}
+
+.App-header {
+    max-width: 60%;
+    margin: auto;
+}
+
+.App-header > a, a:link {
+    color: white;
+    text-decoration: none;
+}

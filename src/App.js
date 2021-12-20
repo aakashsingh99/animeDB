@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import {BrowserRouter as Router,Route,Routes,} from 'react-router-dom';
+import { SearchContext } from './context/search';
 
-function App() {
+import Home from './pages/Home';
+import './App.css'
+import Results from './pages/Results';
+
+const App = () => {
+  const [animeData, setAnimeData] = useState([]);
+  const [inputData, setInputData] = useState([]);
+
+  const setData = (data, input) => {
+    setInputData(input);
+    setAnimeData(data);
+  }
+
+  const search = (searchTerm) => {
+    return fetch(
+      `https://api.jikan.moe/v3/search/anime?q=${searchTerm}&limit=20`
+    ).then((response) => response.json())
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <SearchContext.Provider value={{search, animeData, setData, inputData}}>
+      <div className="App">
+          <Router>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/results" element={<Results />} exact />
+            </Routes>
+          </Router>
+
+      </div>
+    </SearchContext.Provider>
   );
 }
 
