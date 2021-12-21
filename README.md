@@ -1,13 +1,13 @@
 Jikan API: https://jikan.moe/
 
 # /
-(./img/home.png)
+![Home](/img/home.png)
 
 # /results
-(./img/results.png)
+![Results](/img/results.png)
 
 # /details
-(./img/details.png)
+![Details](/img/details.png)
 
 # Getting Started with Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
