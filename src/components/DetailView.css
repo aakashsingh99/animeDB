@@ -1,0 +1,39 @@
+.detail-view {
+    width: 60%;
+    height: 90vh;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.detail-header {
+    max-width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail-image > img {
+    box-shadow: 0 0.5em 1em .5em #a58c6c;
+}
+
+.detail-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detail-title{
+    padding-bottom: 1em;
+}
+
+.detail-snapshot > h3 {
+    padding-bottom: .5em;
+}
+
+.detail-snapshot > a {
+    color: black;
+    text-decoration: underline;
+}
+
+.synopsis {
+    padding: 2em 0 1em 0;
+}

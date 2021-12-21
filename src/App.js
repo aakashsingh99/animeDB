@@ -5,14 +5,20 @@ import { SearchContext } from './context/search';
 import Home from './pages/Home';
 import './App.css'
 import Results from './pages/Results';
+import Details from './pages/Details';
 
 const App = () => {
   const [animeData, setAnimeData] = useState([]);
   const [inputData, setInputData] = useState([]);
+  const [singleData, setSingleData] = useState({});
 
   const setData = (data, input) => {
     setInputData(input);
     setAnimeData(data);
+  }
+
+  const setSingle = (data) => {
+    setSingleData(data);
   }
 
   const search = (searchTerm) => {
@@ -22,12 +28,13 @@ const App = () => {
   };
 
   return (
-    <SearchContext.Provider value={{search, animeData, setData, inputData}}>
+    <SearchContext.Provider value={{search, animeData, setData, singleData, setSingle ,inputData}}>
       <div className="App">
           <Router>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/results" element={<Results />} exact />
+              <Route path="/details" element={<Details/>} exact />
             </Routes>
           </Router>
 

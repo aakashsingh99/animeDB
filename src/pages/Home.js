@@ -17,7 +17,7 @@ const Home = () => {
         searchAnime.search(input).then((data) => {
             searchAnime.setData(data.results, input);
             setLoading(false);
-            console.log(JSON.stringify(data.results));
+            //console.log(JSON.stringify(data.results));
             localStorage.setItem('AnimeDBsearchData', JSON.stringify(data.results));
             navigate('/results');
         });
@@ -43,7 +43,7 @@ const Home = () => {
                             Search
                     </button>
                 </form>
-                {loading && <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>}
+                {loading && <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>}
         </div>
     )
 }
