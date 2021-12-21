@@ -1,6 +1,6 @@
 .detail-view {
-    width: 60%;
-    height: 90vh;
+    max-width: 60%;
+    min-height: 90vh;
     margin: 0 auto;
     padding: 2em;
 }
@@ -8,6 +8,7 @@
 .detail-header {
     max-width: 80%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -16,6 +17,7 @@
 }
 
 .detail-title-wrapper {
+    padding-left: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,3 +39,18 @@
 .synopsis {
     padding: 2em 0 1em 0;
 }
+
+@media (max-width: 900px) {
+    .detail-view {
+        max-width: none;
+    }
+
+    .detail-header {
+      flex-direction: column;
+    }
+
+    .detail-title-wrapper{
+        padding-left: 0;
+        padding-top: 2em;
+    }
+}  
