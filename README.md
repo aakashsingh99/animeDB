@@ -1,12 +1,12 @@
 Jikan API: https://jikan.moe/
 
-# /
+### /
 ![Home](/img/home.png)
 
-# /results
+### /results
 ![Results](/img/results.png)
 
-# /details
+### /details
 ![Details](/img/details.png)
 
 # Getting Started with Create React App
