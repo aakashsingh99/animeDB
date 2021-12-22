@@ -1,23 +1,17 @@
 import React, {useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { SearchContext } from '../context/search';
+import SearchContext from '../context/search';
 
 import './AnimeCard.css'
 
 const AnimeCard = ({data}) => {
     const navigate = useNavigate();
-    const search = useContext(SearchContext);
+    const {fetchSingleResult} = useContext(SearchContext);
 
     const handler = (event) => {
         event.preventDefault();
-        fetch(`https://api.jikan.moe/v3/anime/${data.mal_id}`)
-        .then((response) => response.json())
-        .then((d) => {
-          search.setSingle(d);
-          console.log(d);
-          localStorage.setItem('singleAnimeData', JSON.stringify(d));
-          navigate('/details');
-        });
+        fetchSingleResult(data.mal_id)
+        navigate('/details');
     }
 
     return (

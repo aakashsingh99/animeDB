@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react'
 import DetailView from '../components/DetailView';
 import Header from '../components/Header';
-import { SearchContext } from '../context/search';
+import SearchContext from '../context/search';
 
 const Details = () => {
     const search = useContext(SearchContext);

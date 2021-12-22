@@ -1,45 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {BrowserRouter as Router,Route,Routes,} from 'react-router-dom';
-import { SearchContext } from './context/search';
+import { SearchProvider } from './context/search';
 
-import Home from './pages/Home';
 import './App.css'
+import Home from './pages/Home';
 import Results from './pages/Results';
 import Details from './pages/Details';
+import NotFound from './pages/NotFound';
+
 
 const App = () => {
-  const [animeData, setAnimeData] = useState([]);
-  const [inputData, setInputData] = useState([]);
-  const [singleData, setSingleData] = useState({});
-
-  const setData = (data, input) => {
-    setInputData(input);
-    setAnimeData(data);
-  }
-
-  const setSingle = (data) => {
-    setSingleData(data);
-  }
-
-  const search = (searchTerm) => {
-    return fetch(
-      `https://api.jikan.moe/v3/search/anime?q=${searchTerm}&limit=20`
-    ).then((response) => response.json())
-  };
-
   return (
-    <SearchContext.Provider value={{search, animeData, setData, singleData, setSingle ,inputData}}>
+    <SearchProvider>
       <div className="App">
           <Router>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/results" element={<Results />} exact />
               <Route path="/details" element={<Details/>} exact />
+              <Route path='*' element={<NotFound />} />
             </Routes>
           </Router>
-
       </div>
-    </SearchContext.Provider>
+    </SearchProvider>
   );
 }
 
