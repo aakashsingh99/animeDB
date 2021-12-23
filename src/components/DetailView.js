@@ -24,7 +24,7 @@ const DetailView = ({data}) => {
                         </div>
                         <div>
                             {/* //Todo: Issue: data.aired.from ERROR */}
-                            {/* Aired on: {data.aired.from.toString().split('-')[0]} */}
+                            {/* Aired on: {data.aired.toString().split('-')[0]} */}
                         </div>
                         <a href={data.url} target='_blank' rel='noopener noreferrer'>
                             Goto MAL
