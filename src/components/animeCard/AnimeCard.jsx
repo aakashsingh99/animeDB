@@ -1,22 +1,13 @@
-import React, {useContext } from 'react'
-import { useNavigate } from 'react-router-dom';
-import SearchContext from '../context/search';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 import './AnimeCard.css'
 
 const AnimeCard = ({data}) => {
-    const navigate = useNavigate();
-    const {fetchSingleResult} = useContext(SearchContext);
-
-    const handler = (event) => {
-        event.preventDefault();
-        fetchSingleResult(data.mal_id)
-        navigate('/details');
-    }
 
     return (
-        <div className='anime-card' onClick={handler}>
-            {/* <a className='title-link' href={data.url} target='_blank' rel='noopener noreferrer'> */}
+        <div className='anime-card'>
+            <Link to={`/detail/${data.mal_id}`}>
                 <div className='card-image'>
                     <img src={data.image_url} alt="Avatar"></img>
                 </div>
@@ -30,7 +21,7 @@ const AnimeCard = ({data}) => {
                         <div className='mal-score'> <strong>MAL Score:</strong> {data.score}</div>
                     </div>
                 </div>
-            {/* </a> */}
+            </Link>
         </div>
     )
 }

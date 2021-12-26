@@ -1,13 +1,7 @@
 .results-wrapper {
-    margin: auto;
-}
-
-.search-term {
-    text-align: center;
-    padding: 1em 0;
-    background-color: burlywood;
-}
-
-.results-wrapper > h1 {
-    padding-top: 10em;
+    min-height: 20vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
