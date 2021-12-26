@@ -1,0 +1,7 @@
+.home-wrapper {
+    background-image: url(../../img/bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;  
+}
